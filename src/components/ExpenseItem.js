@@ -1,17 +1,27 @@
 import './ExpenseItem.css'
 
-function ExpenseItem() {
-  return (
+function ExpenseItem(props) {
+    // const expenseDate="December 7th 1998";
+    // const expenseTitle="Car Insurance";
+    // const expenseAmount=294.67;
+    // const LocationOfExpenditure="Goa"
+
+    const month= props.date.toLocaleString('en-US',{month: 'long'})
+    const day= props.date.toLocaleString('en-US',{day: '2-digit'})
+    const year=props.date.getFullYear();
+    return (
     <div className='expense-item'>
-        <div>December 7th 1998</div>
-        <div className='expense-item__description'>
-            <h2>Car Insurance</h2>
+        <div>
+            <div>{month}</div>
+            <div>{day}</div>
+            <div>{year}</div>
         </div>
-        <div className="expense-item__price">$294.67</div>
-      {/* <h2>Expense Items</h2>
-      <h5>Food Rs 10</h5>
-      <h5>Petrol Rs 100</h5>
-      <h5>Movies Rs 200</h5> */}
+        <div className='expense-item__description'>
+            <h2>{props.title}</h2>
+        </div>
+        <div className='expense-item__location'>{props.location}</div>
+
+        <div className="expense-item__price">${props.amount}</div>
     </div>
   );
 }

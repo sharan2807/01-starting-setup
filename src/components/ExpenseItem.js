@@ -1,4 +1,5 @@
 import ExpenseDate from './ExpenseDate';
+import ExpenseDetails from './ExpenseDetails';
 import './ExpenseItem.css'
 
 function ExpenseItem(props) {
@@ -19,12 +20,13 @@ function ExpenseItem(props) {
             <div>{year}</div>
         </div> */} 
         <ExpenseDate date={props.date}></ExpenseDate>
-        <div className='expense-item__description'>
+        {/* <div className='expense-item__description'>
             <h2>{props.title}</h2>
-        </div>
-        <div className='expense-item__location'>{props.location}</div>
+        </div> */}
+        <ExpenseDetails title={props.title} amount={props.amount}  location={props.location}/>
+        {/* <div className='expense-item__location'>{props.location}</div>
 
-        <div className="expense-item__price">${props.amount}</div>
+        <div className="expense-item__price">${props.amount}</div> */}
     </div>
   );
 }

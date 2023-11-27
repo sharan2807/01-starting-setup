@@ -2,6 +2,8 @@ import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
 import './ExpenseItem.css'
 
+import Card from '../UI/Card';
+
 function ExpenseItem(props) {
     // const expenseDate="December 7th 1998";
     // const expenseTitle="Car Insurance";
@@ -13,7 +15,7 @@ function ExpenseItem(props) {
     // const year=props.date.getFullYear();
 
     return (
-    <div className='expense-item'>
+    <Card className='expense-item'>
         {/* <div>
             <div>{month}</div>
             <div>{day}</div>
@@ -27,7 +29,7 @@ function ExpenseItem(props) {
         {/* <div className='expense-item__location'>{props.location}</div>
 
         <div className="expense-item__price">${props.amount}</div> */}
-    </div>
+    </Card>
   );
 }
 export default ExpenseItem;

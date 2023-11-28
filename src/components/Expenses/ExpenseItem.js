@@ -13,6 +13,9 @@ function ExpenseItem(props) {
     // const month= props.date.toLocaleString('en-US',{month: 'long'})
     // const day= props.date.toLocaleString('en-US',{day: '2-digit'})
     // const year=props.date.getFullYear();
+    const delExpenseHandler=()=>{
+        console.log('Expense Deleted')
+    }
 
     return (
     <Card className='expense-item'>
@@ -28,7 +31,8 @@ function ExpenseItem(props) {
         <ExpenseDetails title={props.title} amount={props.amount}  location={props.location}/>
         {/* <div className='expense-item__location'>{props.location}</div>
 
-        <div className="expense-item__price">${props.amount}</div> */}
+        <div className="expense-item__price">${props.amount}</div> */} 
+        <button onClick={delExpenseHandler}>Delete Expense</button>
     </Card>
   );
 }

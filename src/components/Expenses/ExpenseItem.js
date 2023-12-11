@@ -1,10 +1,12 @@
+import React, { useState } from 'react';
+
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
 import './ExpenseItem.css'
 
 import Card from '../UI/Card';
 
-function ExpenseItem(props) {
+const ExpenseItem = (props)=> {
     // const expenseDate="December 7th 1998";
     // const expenseTitle="Car Insurance";
     // const expenseAmount=294.67;
@@ -13,9 +15,13 @@ function ExpenseItem(props) {
     // const month= props.date.toLocaleString('en-US',{month: 'long'})
     // const day= props.date.toLocaleString('en-US',{day: '2-digit'})
     // const year=props.date.getFullYear();
-    const delExpenseHandler=()=>{
-        console.log('Expense Deleted')
-    }
+
+    const [amount,setAmount] = useState(props.amount);
+
+    const clickHandler=()=>{
+        setAmount('100');
+        console.log(amount);
+    };
 
     return (
     <Card className='expense-item'>
@@ -28,11 +34,11 @@ function ExpenseItem(props) {
         {/* <div className='expense-item__description'>
             <h2>{props.title}</h2>
         </div> */}
-        <ExpenseDetails title={props.title} amount={props.amount}  location={props.location}/>
+        <ExpenseDetails title={props.title} amount={amount}  location={props.location}/>
         {/* <div className='expense-item__location'>{props.location}</div>
 
         <div className="expense-item__price">${props.amount}</div> */} 
-        <button onClick={delExpenseHandler}>Delete Expense</button>
+        <button onClick={clickHandler}>Update </button>
     </Card>
   );
 }

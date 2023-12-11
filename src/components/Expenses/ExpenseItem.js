@@ -16,11 +16,11 @@ const ExpenseItem = (props)=> {
     // const day= props.date.toLocaleString('en-US',{day: '2-digit'})
     // const year=props.date.getFullYear();
 
-    const [amount,setAmount] = useState(props.amount);
+    const [title,setTitle] = useState(props.title);
 
     const clickHandler=()=>{
-        setAmount('100');
-        console.log(amount);
+        setTitle('Updated');
+        console.log(title);
     };
 
     return (
@@ -34,7 +34,7 @@ const ExpenseItem = (props)=> {
         {/* <div className='expense-item__description'>
             <h2>{props.title}</h2>
         </div> */}
-        <ExpenseDetails title={props.title} amount={amount}  location={props.location}/>
+        <ExpenseDetails title={title} amount={props.amount}  location={props.location}/>
         {/* <div className='expense-item__location'>{props.location}</div>
 
         <div className="expense-item__price">${props.amount}</div> */} 

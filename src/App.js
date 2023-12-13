@@ -27,9 +27,14 @@ function App() {
       location: "IKEA",
     },
   ];
+
+  const addExpenseHandler=(expense)=>{
+    console.log('In App.js')
+    console.log(expense)
+  }
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
